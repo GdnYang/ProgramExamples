@@ -1,0 +1,35 @@
+Overview
+--------
+The Java project includes two programming packages:
+
+1. Examples.feed: 
+   Java programs read RSS/Atom feeds from http://www.macleans.ca/multimedia/feed/ and parser these 
+   feeds, persist them into Mysql database, and convert into Json feed and output into a file. 
+       
+   There are four Java classes included: 
+       Feed.java --- javaBean; 
+       FeedReader.java --- Read and Parser by using ROME framework;
+       FeedWriteToDB.java --- persist these feeds into DB by using JDBC with prepared statement; 
+       FeedJsonWriter.java --- write feeds into a Json file in data/feeds.json. 
+       
+   Referenced libraries: ROME(jdom-1.0.jar, rome-1.0.jar); Javax Json (javax.json-1.0.4.jar) 
+       
+   To run this program, the referenced libraries need to be in Classpath and then execute: 
+       java FeedReader                
+
+2. Examples.sac:
+   Java program will find the shortest addition chain for any given positive integer N and 
+   then calculate the smallest number of multiplications based on the computed addition chain. 
+   There are three methods created in this program: 
+       the first one is the original binary (search) method --- gen_binary(int nx);
+       the second one is the "trinary" method --- gen_trinary(int nx);
+       On top of them, a "quadrinary" method created --- gen_quadrinary(int nx).
+   These three methods are tested and the results are compared. The results show that both 
+   trinary and quadrinary methods will give shortest addition chain or smallest number of 
+   multiplication when N < 1087. For very big number N = 31415, three methods will give the results
+   as 24, 22, 21, respectively, compared with 19, the smallest number of multiplication.
+   However, the computing times are nearly the same for the three methods in the N=31415 case. 
+   Therefore, the performance of quadrinary method seems ideal. 
+
+
+
